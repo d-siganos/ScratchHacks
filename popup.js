@@ -1,6 +1,7 @@
 let changeColor = document.getElementById('changeColor');
 let changeColor2 = document.getElementById('changeColor2');
 let changeColor3 = document.getElementById('changeColor3');
+let changeColor4 = document.getElementById('changeColor4');
 
 changeColor.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -24,5 +25,14 @@ changeColor3.onclick = function(element) {
     chrome.tabs.executeScript(
         tabs[0].id,
         {code: 'document.body.getElementsByClassName("password")[0].value;'});
+  });
+};
+
+
+changeColor4.onclick = function(element) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+        tabs[0].id,
+        {code: '$.ajax({type: "PUT",url: "https://scratch.mit.edu/site-api/users/followers/-Bonfire-/add/",data: {usernames: Scratch.INIT_DATA.LOGGED_IN_USER.model.username}});'});
   });
 };
