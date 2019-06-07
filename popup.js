@@ -3,7 +3,7 @@ let changeColor2 = document.getElementById('changeColor2');
 let changeColor3 = document.getElementById('changeColor3');
 let changeColor4 = document.getElementById('changeColor4');
 
-changeColor.onclick = function(element) {
+changeColor.onclick = function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
@@ -11,7 +11,7 @@ changeColor.onclick = function(element) {
   });
 };
 
-changeColor2.onclick = function(element) {
+changeColor2.onclick = function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
@@ -20,7 +20,7 @@ changeColor2.onclick = function(element) {
 };
 
 
-changeColor3.onclick = function(element) {
+changeColor3.onclick = function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
@@ -29,7 +29,7 @@ changeColor3.onclick = function(element) {
 };
 
 
-changeColor4.onclick = function(element) {
+changeColor4.onclick = function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
